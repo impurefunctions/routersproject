@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>252367167902-g7fq5sphrn2o3bn2uin4u8cqjcssuriu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.252367167902-g7fq5sphrn2o3bn2uin4u8cqjcssuriu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDgjij-hMP2r5k8Bg3sG4sXBSNiRxSA4Z8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>252367167902</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.routersproject</string>
+	<key>PROJECT_ID</key>
+	<string>routersproject-c439d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>routersproject-c439d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:252367167902:ios:6a451ddeb9918617feb68f</string>
+	<key>DATABASE_URL</key>
+	<string>https://routersproject-c439d-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

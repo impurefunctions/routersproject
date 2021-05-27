@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "252367167902",
+    "firebase_url": "https://routersproject-c439d-default-rtdb.firebaseio.com/",
+    "project_id": "routersproject-c439d",
+    "storage_bucket": "routersproject-c439d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252367167902:android:5eb21ccb464dd461feb68f",
+        "android_client_info": {
+          "package_name": "com.example.routersproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "252367167902-ipq2j3nsrc48im5aame7osqiljvjl7k8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtpzIITrjSVSZqPNOQlc9NGbhwfhMJPuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "252367167902-ipq2j3nsrc48im5aame7osqiljvjl7k8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
