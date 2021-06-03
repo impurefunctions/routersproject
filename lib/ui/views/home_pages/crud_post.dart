@@ -2,6 +2,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:wifi_iot/wifi_iot.dart';
 import '../../../core/models/post.dart';
 import '../../../core/services/theme_data_service.dart';
 import '../../../core/viewmodels/add_post_wm.dart';
@@ -15,7 +16,7 @@ import '../../../ui/widgets/appbar_title.dart';
 import '../../../ui/widgets/label_card.dart';
 import '../../../core/services/global_pages_service.dart'
     as globalPages;
-import 'package:wifi_connect/wifi_connect.dart';
+//import 'package:wifi_connect/wifi_connect.dart';
 
 class CrudPost extends StatefulWidget {
   const CrudPost({Key key}) : super(key: key);
@@ -24,7 +25,7 @@ class CrudPost extends StatefulWidget {
   _CrudPostState createState() => _CrudPostState();
 }
 
-class _CrudPostState extends State<CrudPost> {
+class _CrudPostState extends State<CrudPost>{ //with WifiScannerMixin<CrudPost> {
   
   List<Post> allPosts = [];
   var _postTitleController = TextEditingController();
@@ -36,6 +37,13 @@ class _CrudPostState extends State<CrudPost> {
 
   String connectSuccess;
   var hidden = false;
+
+
+  @override
+  void initState() {
+    //startWifiScanner();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -307,16 +315,34 @@ class _CrudPostState extends State<CrudPost> {
     );
   }
 
-  Future <void> connectToRouter( String ssid, String password) async{
+  void connectToRouter( String ssid, String password) async{
     setState(() {
       connectSuccess = '...';
       print(connectSuccess);
     });
-    try {
+
+
+    /*await WiFiForIoTPlugin.connect(ssid,
+      password: password,
+      withInternet: true
+    ).then((value) => print(value.toString()));*/
+
+
+
+   await WiFiForIoTPlugin.findAndConnect(ssid,
+        password: password,
+    ).then((value) => print("We're connected: ${value.toString()}"));
+
+
+    WiFiForIoTPlugin.getSSID().then((value) => print("Wifi is $value"));
+   // await WifiConnect.
+   /* try {
       await WifiConnect.connect(
         context,
         ssid: ssid,
+        hidden: false,
         password: password,
+        //securityType: hidden ? SecurityType.wpa : SecurityType.auto,
       );
     } on WifiConnectException catch (e) {
       print('error: $e');
@@ -324,10 +350,29 @@ class _CrudPostState extends State<CrudPost> {
         connectSuccess = e.status.toString();
       });
       return;
-    }
+    }*/
     print('sucess!');
     setState(() {
       connectSuccess = 'Success!';
     });
   }
+
+  /*Future<void> initPlatformState() async {
+    String ssid;
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+      ssid = await FlutterWifiConnect.ssid;
+    } on PlatformException {
+      ssid = 'Failed to get ssid';
+    }
+
+    // If the widget was removed from the tree while the asynchronous platform
+    // message was in flight, we want to discard the reply rather than calling
+    // setState to update our non-existent appearance.
+    if (!mounted) return;
+
+    setState(() {
+      _ssid = ssid;
+    });
+  }*/
 }
